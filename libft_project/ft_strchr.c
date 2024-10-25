@@ -2,21 +2,17 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	char	ch;
-	int		i;
-
-	ch = c;
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == ch)
-			return ((char *)&str[i]);
-		i++;
+		if (*str == (char)c)
+			return ((char *)str);
+		str++;
 	}
-	if (str[i] == ch)
-		return ((char *)&str[i]);
+	if (*str == (char)c)
+		return ((char *)str);
 	return (NULL);
 }
+
 /*
 #include <stdio.h>
 
@@ -24,13 +20,12 @@ char	*ft_strchr(const char *str, int c)
 
 int	main(void)
 {
-	const char	*str = "";
+	const char	*str = "hello";
 	char		ch;
 	char		*result;
 
-	ch = '\0';
+	ch = 'e';
 	result = ft_strchr(str, ch);
 	printf("Character '%s'", result);
 	return (0);
-}
-*/
+}*/

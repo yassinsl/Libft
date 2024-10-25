@@ -9,7 +9,7 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 	i = 0;
 	str = (unsigned char *)s;
 	sh = (unsigned char)c;
-	while (i < n)
+	while (i < n && str[i])
 	{
 		if (str[i] == sh)
 			return ((void *)&str[i]);
@@ -20,15 +20,13 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 /*
 #include <stdio.h>
 
-//#include <string.h>
+#include <string.h>
 
 int	main(void)
 {
-	char	buffer[] = "yassin ";
+	char	buffer[] = "hello";
 	char	*found;
 
-	found = ft_memchr(buffer, '\0', sizeof(buffer));
-	printf("Character '%s\n", found);
+	printf("Character %s\n",ft_memchr("hello",'f', 500));
 	return (0);
-}
-*/
+}*/

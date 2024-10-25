@@ -4,7 +4,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst)
 	{
-		if (lst->next == NULL)
+		if (!lst->next)
 			return (lst);
 		lst = lst->next;
 	}
@@ -14,7 +14,7 @@ t_list	*ft_lstlast(t_list *lst)
 #include <stdio.h>
 
 void	print_node(t_list *node) {
-	if (node) {
+        if (node) {
 		printf("Node content: %d\n", *(int *)(node->content));
 	} else {
 		printf("Node is NULL\n");

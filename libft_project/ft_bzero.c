@@ -11,7 +11,7 @@ void	ft_bzero(void *s, unsigned int len)
 
 int	main(void)
 {
-	int	arr[10] = {1, 3, 5, 6, 7, 8, 9, 9};
+	    char	arr[10] = "mikemok";
 
 	ft_bzero(arr, sizeof(arr));
 	for (int i = 0; i < 10; i++)

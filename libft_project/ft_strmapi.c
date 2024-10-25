@@ -6,7 +6,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*s1;
 
-	if (s == NULL || f == NULL)
+	if (!s || !f)
 		return (NULL);
 	len = ft_strlen((char *)s);
 	i = 0;

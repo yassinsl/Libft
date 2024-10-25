@@ -86,7 +86,8 @@ char	**ft_fill_result(char **result, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-
+    if(!s)
+        return(NULL);
 	result = ft_allocate_result(s, c);
 	if (result == NULL)
 		return (NULL);

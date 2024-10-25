@@ -1,6 +1,6 @@
 #include <stddef.h>
 
-void	*ft_memmove(void *dest, const void *src, unsigned int n)
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
 	char			*d;
 	const char		*s = src;
@@ -13,7 +13,7 @@ void	*ft_memmove(void *dest, const void *src, unsigned int n)
 	if (d > s)
 	{
 		while (n--)
-			*d++ = *s++;
+			d[n] = s[n];
 	}
 	else
 	{
@@ -33,10 +33,8 @@ int	main(void)
 	char	buffer[20] = "Hello, World!";
 
 	// Overlapping regions
-	// Move "World!" within the same buffer
-	ft_memmove(buffer + 7, buffer + 7, 7); // Overlap: "World!" starts at buffer
-		+ 6 and is moved to buffer + 7
+	// Move "World!" within the same buffe
+    ft_memmove(buffer + 8, buffer + 7, 9); // Overlap: "World!" starts at buffer
 	printf("Result: %s\n", buffer);
 	return (0);
-}
-*/
+}*/

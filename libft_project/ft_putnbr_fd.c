@@ -24,10 +24,9 @@ int	main(void)
 {
 	int	fd;
 
-	fd = open("yassin.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	fd = open("yassin.txt", O_WRONLY | O_CREAT, 0644);
 	if (fd == -1)
 	{
-		// Handle error
 		return (1);
 	}
 	ft_putnbr_fd(1000000, fd);
