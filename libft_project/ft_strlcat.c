@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/25 13:56:43 by ylahssin          #+#    #+#             */
+/*   Updated: 2024/10/25 13:58:26 by ylahssin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int	len_dest;
-	unsigned int	len_src;
-	unsigned int	i;
+	size_t	len_dest;
+	size_t	len_src;
+	size_t	i;
 
 	len_dest = ft_strlen(dest);
 	len_src = ft_strlen(src);

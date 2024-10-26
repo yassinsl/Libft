@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
+/*   Updated: 2024/10/25 12:41:44 by ylahssin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
@@ -27,8 +39,9 @@ void	print_list(t_list *head)
 
 int	main(void)
 {
-	int	content1 = 10, content2 = 20, content3;
+	int	content1;
 
+	content1 = 10, content2 = 20, content3;
 	// Create initial nodes
 	t_list *node1, *node2, *node3;
 	content1 = 10, content2 = 20, content3 = 30;

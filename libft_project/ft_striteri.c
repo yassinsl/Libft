@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/25 12:39:28 by ylahssin          #+#    #+#             */
+/*   Updated: 2024/10/25 12:49:31 by ylahssin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
@@ -43,13 +55,18 @@ void	reverse_case(unsigned int i, char *c)
 
 int	main(void)
 {
-	char	str1[] = "hello world";
-	char	str2[] = "abcd";
-	char	str3[] = "HeLLo WoRLD";
-	char	str4[] = "";
+	char	str1[];
+	char	str2[];
+	char	str3[];
+	char	str4[];
 	char	*str5;
-	char	str6[] = "test";
+	char	str6[];
 
+	str1[] = "hello world";
+	str2[] = "abcd";
+	str3[] = "HeLLo WoRLD";
+	str4[] = "";
+	str6[] = "test";
 	// Test 1: Basic string with to_upper
 	ft_striteri(str1, to_upper);
 	printf("Test 1 - Result: %s\n", str1); // Should print "HELLO WORLD"

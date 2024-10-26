@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/25 12:39:27 by ylahssin          #+#    #+#             */
+/*   Updated: 2024/10/25 12:46:12 by ylahssin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_word(char *word, char *str, int len)
@@ -86,8 +98,9 @@ char	**ft_fill_result(char **result, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-    if(!s)
-        return(NULL);
+
+	if (!s)
+		return (NULL);
 	result = ft_allocate_result(s, c);
 	if (result == NULL)
 		return (NULL);

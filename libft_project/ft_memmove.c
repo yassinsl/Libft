@@ -1,14 +1,27 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
+/*   Updated: 2024/10/25 21:23:21 by ylahssin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char			*d;
-	const char		*s = src;
+	const char		*s;
 	unsigned int	i;
 
+	s = src;
 	d = dest;
 	i = 0;
-	if (!s || !d)
+	if (!s && !d)
 		return (NULL);
 	if (d > s)
 	{

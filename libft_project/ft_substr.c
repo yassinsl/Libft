@@ -1,27 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/25 15:33:14 by ylahssin          #+#    #+#             */
+/*   Updated: 2024/10/25 18:54:55 by ylahssin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-char	*ft_strncpy(char *s1, char *s2, unsigned int len)
-{
-    unsigned int	i;
-
-	i = 0;
-	while (s2[i] && i < len)
-	{
-		s1[i] = s2[i];
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
-}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*result;
-	unsigned int		total_len;
+	size_t	total_len;
 
 	if (!s)
 		return (NULL);
-	if (start >= (unsigned int)ft_strlen((char *)s))
+	if (start >= (unsigned int)ft_strlen(s))
 	{
 		result = (char *)(malloc(sizeof(char)));
 		if (!result)
@@ -32,23 +30,25 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	total_len = ft_strlen((char *)(s + start));
 	if (total_len > len)
 		total_len = len;
-	result = (char *)(malloc(sizeof(char) * total_len));
-	if (result == NULL)
+	result = (char *)(malloc(sizeof(char) * (total_len + 1)));
+	if (!result)
 		return (NULL);
-	ft_strncpy(result, (char *)(s + start), total_len);
+	ft_strlcpy(result, (char *)(s + start), total_len + 1);
 	return (result);
 }
 /*
 #include <stdio.h>
 int	main(void)
 {
-	char	*s;
-	char	*result;
+	char	*str;
 
-	s = "iliaselmahi";
-	result = ft_substr(s, 20, 5);
-	printf("Test 2: %s\n", result);
-	free(result);
+	str = "yassin lahssini",*strsub;
+    if (!(strsub = ft_substr(str, 0, 10)))
+        printf("NULL");
+    else
+        printf( "%s\n", strsub);
+    if (str == strsub)
+        printf("\nA new string was not returned");
 }
 */
 /*

@@ -1,20 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/25 15:21:47 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/26 08:49:51 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int	ft_lstsize(t_list *lst)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else
-		return (0);
+	int	count;
+
+	count = 0;
+	while (lst)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }
+/*
+int	main(void)
+{
+	int		a;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
+	int		size;
+
+	a = 1, b = 2, c;
+	a = 1, b = 2, c = 3;
+	node1 = ft_lstnew(&a);
+	node2 = ft_lstnew(&b);
+	node3 = ft_lstnew(&c);
+	node1->next = node2;
+	node2->next = node3;
+	size = ft_lstsize(node1);
+	printf("Size of the list: %d\n", size);
+	free(node1);
+	free(node2);
+	free(node3);
+}
+*/
