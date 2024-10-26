@@ -12,21 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_word(char *word, char *str, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len)
-	{
-		word[i] = str[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}
-
-int	ft_count_word(const char *word, char c)
+static int	ft_count_word(const char *word, char c)
 {
 	int	is_word;
 	int	count;
@@ -47,7 +33,7 @@ int	ft_count_word(const char *word, char c)
 	return (count);
 }
 
-char	**ft_allocate_result(char const *s, char c)
+static char	**ft_allocate_result(char const *s, char c)
 {
 	char	**result;
 	int		total_word;
@@ -59,7 +45,7 @@ char	**ft_allocate_result(char const *s, char c)
 	return (result);
 }
 
-int	ft_fill_result(char **result, char const *s, char c)
+static int	ft_fill_result(char **result, char const *s, char c)
 {
 	char	*str;
 	char	*start;
@@ -83,9 +69,10 @@ int	ft_fill_result(char **result, char const *s, char c)
 				free(result[pos]);
 			return (0);
 		}
-		result[pos] = ft_word(result[pos++], start, str - start);
+		ft_strlcpy(result[pos], start, str - start + 1);
+		pos++;
 	}
-	return (result[pos] = NULL, 1);
+	return (result[pos] = NULL,1);
 }
 
 char	**ft_split(char const *s, char c)

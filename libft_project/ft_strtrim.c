@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
 
 // char	*new_string(char *s1, int start, int len)
 // {
@@ -44,6 +42,7 @@
 // 	}
 // 	return (0);
 // }
+#include "libft.h"
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

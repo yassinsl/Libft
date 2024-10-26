@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnbr_to_result(char *result, long long nb, int total_len)
+static void	ft_putnbr_to_result(char *result, long long nb, int total_len)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ void	ft_putnbr_to_result(char *result, long long nb, int total_len)
 	}
 }
 
-int	ft_len(long long n)
+static int	ft_len(long long n)
 {
 	int	len_total;
 
@@ -37,7 +37,7 @@ int	ft_len(long long n)
 	return (len_total);
 }
 
-char	*is_zero(void)
+static char	*is_zero(void)
 {
 	char	*result;
 
