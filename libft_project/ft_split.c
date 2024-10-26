@@ -6,7 +6,7 @@
 /*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:27 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/25 12:46:12 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/26 20:53:09 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,14 +52,6 @@ char	**ft_allocate_result(char const *s, char c)
 	char	**result;
 	int		total_word;
 
-	if (!s)
-	{
-		result = malloc(sizeof(char *));
-		if (result == NULL)
-			return (NULL);
-		result[0] = NULL;
-		return (result);
-	}
 	total_word = ft_count_word(s, c);
 	result = malloc(sizeof(char *) * (total_word + 1));
 	if (result == NULL)
@@ -67,12 +59,11 @@ char	**ft_allocate_result(char const *s, char c)
 	return (result);
 }
 
-char	**ft_fill_result(char **result, char const *s, char c)
+int	ft_fill_result(char **result, char const *s, char c)
 {
 	char	*str;
 	char	*start;
 	int		pos;
-	char	*word;
 
 	str = (char *)s;
 	pos = 0;
@@ -85,14 +76,16 @@ char	**ft_fill_result(char **result, char const *s, char c)
 		start = str;
 		while (*str && *str != c)
 			str++;
-		word = malloc((str - start + 1) * sizeof(char));
-		if (word == NULL)
-			return (NULL);
-		result[pos] = ft_word(word, start, str - start);
-		pos++;
+		result[pos] = malloc((str - start + 1) * sizeof(char));
+		if (result[pos] == NULL)
+		{
+			while (--pos >= 0)
+				free(result[pos]);
+			return (0);
+		}
+		result[pos] = ft_word(result[pos++], start, str - start);
 	}
-	result[pos] = NULL;
-	return (result);
+	return (result[pos] = NULL, 1);
 }
 
 char	**ft_split(char const *s, char c)
@@ -104,9 +97,11 @@ char	**ft_split(char const *s, char c)
 	result = ft_allocate_result(s, c);
 	if (result == NULL)
 		return (NULL);
-	result = ft_fill_result(result, s, c);
-	if (result == NULL)
+	if (!ft_fill_result(result, s, c))
+	{
+		free(result);
 		return (NULL);
+	}
 	return (result);
 }
 /*
