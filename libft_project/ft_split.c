@@ -12,6 +12,12 @@
 
 #include "libft.h"
 
+static void	ft_free_last_result(char **result, int position)
+{
+	while (position >= 0)
+		free(result[position]);
+}
+
 static int	ft_count_word(const char *word, char c)
 {
 	int	is_word;
@@ -65,14 +71,13 @@ static int	ft_fill_result(char **result, char const *s, char c)
 		result[pos] = malloc((str - start + 1) * sizeof(char));
 		if (result[pos] == NULL)
 		{
-			while (--pos >= 0)
-				free(result[pos]);
+			ft_free_last_result(result, pos);
 			return (0);
 		}
 		ft_strlcpy(result[pos], start, str - start + 1);
 		pos++;
 	}
-	return (result[pos] = NULL,1);
+	return (result[pos] = NULL, 1);
 }
 
 char	**ft_split(char const *s, char c)
