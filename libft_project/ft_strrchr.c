@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:25:53 by ylahssin          #+#    #+#             */
 /*   Updated: 2024/10/26 06:57:34 by ylahssin         ###   ########.fr       */

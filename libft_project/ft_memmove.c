@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/25 21:23:21 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:14:45 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,4 @@ int	main(void)
     ft_memmove(buffer + 8, buffer + 7, 9); // Overlap: "World!" starts at buffer
 	printf("Result: %s\n", buffer);
 	return (0);
-}*/
+i}*/

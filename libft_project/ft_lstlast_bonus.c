@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
 /*   Updated: 2024/10/25 12:42:01 by ylahssin         ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
 /*   Updated: 2024/10/25 15:21:47 by ylahssin         ###   ########.fr       */

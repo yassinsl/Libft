@@ -10,29 +10,32 @@ SRCS = ft_isdigit.c ft_memcpy.c ft_bzero.c ft_strdup.c \
         ft_memcmp.c ft_strchr.c ft_strlen.c ft_strtrim.c ft_strmapi.c \
         ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
         ft_putnbr_fd.c
-SRCS_BN =  ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
-            ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
-            ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+SRCS_BN = ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
+           ft_lstdelone_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c \
+           ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BN = $(SRCS_BN:.c=.o)
+
 NAME = libft.a
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME) : $(OBJS)
+$(NAME): $(OBJS)
 	@ar rcs $@ $(OBJS)
-bonus : $(OBJS_BN)
+
+bonus: $(OBJS) $(OBJS_BN)
 	@ar rcs $(NAME) $(OBJS) $(OBJS_BN)
+
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-clean :
-	@rm -f $(OBJS) $(NAME) $(OBJS_BN)
+clean:
+	@rm -f $(OBJS) $(OBJS_BN)
 
-fclean : clean
+fclean: clean
 	@rm -f $(NAME)
 
-re : fclean all 
+re: fclean all
 
-.PHONY: clean re fclean bonus
+.PHONY: all clean fclean re bonus

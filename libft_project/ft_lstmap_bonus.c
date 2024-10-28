@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/25 12:42:05 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:17:23 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*new_elem;
+	void	*content;
 
+	if (!f || !del || !lst)
+		return (NULL);
 	new_lst = NULL;
 	while (lst)
 	{
-		new_elem = ft_lstnew(f(lst->content));
+		content = f(lst->content);
+		new_elem = ft_lstnew(content);
 		if (!new_elem)
 		{
+			free(content);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}

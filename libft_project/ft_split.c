@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ylahssin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:27 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/26 20:53:09 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/27 14:20:00 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_free_last_result(char **result, int position)
 {
 	while (position >= 0)
-		free(result[position]);
+		free(result[position--]);
 }
 
 static int	ft_count_word(const char *word, char c)
