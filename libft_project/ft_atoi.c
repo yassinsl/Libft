@@ -6,7 +6,7 @@
 /*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 09:31:28 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/26 09:31:59 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/29 05:57:33 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
-	{
 		num = num * 10 + *str++ - '0';
-	}
 	return (num * sign);
 }
