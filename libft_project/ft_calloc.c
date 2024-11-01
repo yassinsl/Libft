@@ -6,7 +6,7 @@
 /*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:23 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/26 07:04:09 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/29 18:19:58 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	size_t	i;
 	char	*result;
 
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
+		return (NULL);
 	result = malloc(nmemb * size);
 	if (!result)
 		return (NULL);

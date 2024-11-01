@@ -6,13 +6,11 @@
 /*   By: ylahssin <ylahssin@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 12:39:27 by ylahssin          #+#    #+#             */
-/*   Updated: 2024/10/25 12:44:32 by ylahssin         ###   ########.fr       */
+/*   Updated: 2024/10/29 13:23:08 by ylahssin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
-#include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {

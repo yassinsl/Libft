@@ -38,6 +38,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 /*
 #include <stdio.h>
+
 int	main(void)
 {
 	char	*str;
@@ -51,46 +52,3 @@ int	main(void)
         printf("\nA new string was not returned");
 }
 */
-/*
-#include <stdio.h>
-
-int	main(void) {
-	char *result;
-
-	// Test 1: Normal case
-	result = ft_substr("Hello, World!", 7, 5);
-	printf("Test 1: %s\n", result); // Expected: "World"
-	free(result);
-
-	// Test 2: Start index out of bounds
-	result = ft_substr("Hello, World!", 20, 5);
-	printf("Test 2: %s\n", result); // Expected: ""
-	free(result);
-
-	// Test 3: Len exceeds the string length from start
-	result = ft_substr("Hello, World!", 7, 50);
-	printf("Test 3: %s\n", result); // Expected: "World!"
-	free(result);
-
-	// Test 4: Start index at the last character
-	result = ft_substr("Hello, World!", 12, 1);
-	printf("Test 4: %s\n", result); // Expected: "!"
-	free(result);
-
-	// Test 5: Empty string
-	result = ft_substr("", 0, 10);
-	printf("Test 5: %s\n", result); // Expected: ""
-	free(result);
-
-	// Test 6: Start index in the middle of the string
-	result = ft_substr("Hello, World!", 4, 3);
-	printf("Test 6: %s\n", result); // Expected: "o, "
-	free(result);
-
-	// Test 7: Start index at the start of the string
-	result = ft_substr("Hello, World!", 0, 5);
-	printf("Test 7: %s\n", result); // Expected: "Hello"
-	free(result);
-
-	return (0);
-}*/
