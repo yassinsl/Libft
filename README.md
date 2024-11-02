@@ -86,7 +86,7 @@ The Libft project was more than just a coding assignment - it was a foundational
 
 Feel free to reach out if you're also working on Libft or have any questions!
 
-- GitHub: [@yourusername](https://github.com/yassinsl)
+- GitHub: [@yassinsl](https://github.com/yassinsl)
 - 42 Profile: [ylahssin]
 
 ---
